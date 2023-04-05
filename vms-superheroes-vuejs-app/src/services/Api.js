@@ -1,8 +1,5 @@
 import axios from 'axios'
 
-// TODO:
-const host = 'localhost'
-
 function headers() {
   const token = ''
   const authHeader = token

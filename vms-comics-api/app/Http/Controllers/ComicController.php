@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
-use App\Repositories\AuthorRepository;
+use App\Repositories\ComicRepository;
 
-class AuthorController extends BaseController
+class ComicController extends BaseController
 {
-    private AuthorRepository $authorRepository;
+    private ComicRepository $comicRepository;
 
     public function __construct(
-        AuthorRepository $authorRepository
+      ComicRepository $comicRepository
     ) {
-        $this->authorRepository = $authorRepository;
+        $this->comicRepository = $comicRepository;
     }
 
     public function index(Request $request)
     {
-        $results = $this->authorRepository->all();
+        $results = $this->comicRepository->all();
         return response()->json($results);
     }
 

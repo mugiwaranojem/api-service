@@ -5,7 +5,7 @@ export default {
   async getAll(params) {
     params = params || {}
     const queryString = UrlHelper.stringify(params)
-    let url = 'http://localhost/api/authors'
+    let url = 'http://localhost/api/comics'
     if (queryString) {
       url = `${url}?${queryString}`
     }
