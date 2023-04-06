@@ -2,6 +2,14 @@
 
 ## Project setup
 
+### Prerequisite 
+PHP 8.1 or later  
+Docker  
+Docker compose  
+composer  
+npm
+###
+
 ### Clone project
 git clone https://github.com/mugiwaranojem/api-service.git 
 ###
@@ -58,4 +66,10 @@ npm install
 ### Up frontend localhost:8080
 ```
 npm run serve
+```
+
+## Unit test
+```
+cd vms-comics-api  
+./vendor/bin/sail test
 ```
