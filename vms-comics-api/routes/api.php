@@ -28,6 +28,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get('/authors', [AuthorController::class, 'index']);
     Route::get('/authors/{id}/comics', [AuthorController::class, 'authorComics']);
+    Route::get('/comics', [ComicController::class, 'index']);
 });
 
-Route::get('/comics', [ComicController::class, 'index']);

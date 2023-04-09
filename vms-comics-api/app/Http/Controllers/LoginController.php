@@ -45,16 +45,12 @@ class LoginController extends BaseController
         }
 
         $user = Auth::user();
-        $tokens = [];
-        foreach ($user->tokens as $personalToken) {
-            $tokens[] = $personalToken->token;
-        }
         return response()->json([
             'user' => [
                 'email' => $user->email,
                 'name' => $user->name
             ],
-            'token' => $tokens
+            'success' => true
         ]);
     }
 }

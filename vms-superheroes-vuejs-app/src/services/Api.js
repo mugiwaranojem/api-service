@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+axios.defaults.withCredentials = true
+axios.defaults.baseURL = 'http://localhost'
+
 function headers() {
   const token = ''
   const authHeader = token
