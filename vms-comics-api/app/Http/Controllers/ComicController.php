@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Repositories\ComicRepository;
+use App\Http\Resources\ComicResource;
 
 class ComicController extends BaseController
 {
@@ -18,13 +19,13 @@ class ComicController extends BaseController
 
     public function index(Request $request)
     {
-        $results = $this->comicRepository->all();
+        $results = ComicResource::collection($this->comicRepository->all());
         return response()->json($results);
     }
 
     public function authorComics(Request $request, int $id)
     {
-        $results = $this->authorRepository->getAuthorComics($id);
+        $results = ComicResource::collection($this->authorRepository->getAuthorComics($id));
         return response()->json($results);
     }
 }

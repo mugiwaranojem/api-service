@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Repositories\AuthorRepository;
+use App\Http\Resources\AuthorResource;
 
 class AuthorController extends BaseController
 {
@@ -18,7 +19,7 @@ class AuthorController extends BaseController
 
     public function index(Request $request)
     {
-        $results = $this->authorRepository->all();
+        $results = AuthorResource::collection($this->authorRepository->all());
         return response()->json($results);
     }
 
